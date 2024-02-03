@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 dotenv.config();
 const app = express();
-const PORT = Number(process.env.PORT);
+const PORT = Number(8501);
 
 app.use(express.json());
 app.use("/", AppRouter);
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 mongoose
-  .connect(`${process.env.DB_URL}/${process.env.DB_NAME}`)
+  .connect(`mongodb+srv://kirankumarnaga7:Nkiran07@assignmentorcluster.ldpor5b.mongodb.net/?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
